@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric Empire — Modern Attractive Website</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f4ff;
+    color: #222;
+    scroll-behavior: smooth;
+}
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(66, 43, 129, 0.85), rgba(118, 75, 162, 0.85)), url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+}
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+.hero h1 {
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 1.25rem auto 0;
+    opacity: 0.95;
+}
+.hero .btn-custom,
+.hero .btn-demo {
+    border-radius: 35px;
+    padding: 0.95rem 2.3rem;
+    font-weight: 700;
+}
+.btn-custom {
+    background: white;
+    color: #5f3bb0;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+.btn-custom:hover {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+.btn-demo {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.35);
+    margin-left: 1rem;
+}
+.btn-demo:hover {
+    background: rgba(255,255,255,0.3);
+}
+.navbar {
+    transition: 0.4s;
+}
+.navbar.scrolled {
+    background-color: rgba(0,0,0,0.9) !important;
+}
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 4rem;
+    height: 4px;
+    background: #7b57db;
+}
+.card {
+    border: none;
+    border-radius: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(59, 43, 123, 0.18);
+}
+.card img {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    object-fit: cover;
+    height: 220px;
+    width: 100%;
+}
+.stats-card {
+    background: linear-gradient(135deg, #ffffff, #f1edff);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    border: 1px solid rgba(125, 94, 255, 0.12);
+}
+.stats-card h3 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #5f3bb0;
+}
+.stats-card p {
+    margin-bottom: 0;
+    color: #555;
+}
+footer {
+    background: #111;
+    color: #ddd;
+    padding: 28px 0;
+    text-align: center;
+}
+.bg-light {
+    background: #fbf8ff !important;
+}
+.form-control {
+    border-radius: 16px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+}
+.btn-dark {
+    border-radius: 18px;
+    letter-spacing: 0.02em;
+}
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand fw-bold" href="#">Eric Empire</a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+<li class="nav-item"><a class="nav-link" href="#stats">Stats</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+<li class="nav-item"><a class="nav-link" href="https://eric-empire-demo.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<section class="hero" id="home">
+<div class="container text-center">
+<h1>Build Something Amazing<br>with Eric Empire</h1>
+<p>Modern design, polished interactions, and fast performance for brands that want to stand out online.</p>
+<a href="#services" class="btn btn-custom mt-3">Explore Services</a>
+<a href="https://eric-empire-demo.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-demo mt-3">Visit Live Demo</a>
+</div>
+</section>
+
+<section class="py-5" id="services">
+<div class="container">
+<div class="text-center mb-5">
+<h2 class="fw-bold section-title">Our Services</h2>
+<p class="text-muted mx-auto" style="max-width: 650px;">From polished websites to conversion-driven digital campaigns, every project is crafted for impact.</p>
+</div>
+<div class="row g-4">
+<div class="col-md-4">
+<div class="card overflow-hidden">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Web Design">
+<div class="card-body text-center">
+<h4>Web Design</h4>
+<p>Responsive layouts with bold visuals and seamless interaction.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card overflow-hidden">
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Branding">
+<div class="card-body text-center">
+<h4>Branding</h4>
+<p>Unique identity systems that connect with your audience.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card overflow-hidden">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Marketing">
+<div class="card-body text-center">
+<h4>Marketing</h4>
+<p>Data-driven campaigns designed to grow traffic and revenue.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card overflow-hidden">
+<img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80" alt="Landing Pages">
+<div class="card-body text-center">
+<h4>Landing Pages</h4>
+<p>High-converting pages for launches, offers, and campaigns.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card overflow-hidden">
+<img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=800&q=80" alt="UI/UX">
+<div class="card-body text-center">
+<h4>UI/UX Design</h4>
+<p>Interfaces that feel intuitive, polished, and delightful.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card overflow-hidden">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="SEO">
+<div class="card-body text-center">
+<h4>SEO Optimization</h4>
+<p>Improved visibility and search rankings for long-term growth.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-5 bg-light" id="work">
+<div class="container">
+<div class="row align-items-center mb-5">
+<div class="col-md-6">
+<h2 class="fw-bold section-title">Work Done</h2>
+<p>Selected projects designed for modern brands, startups, and growing businesses.</p>
+</div>
+<div class="col-md-6">
+<p class="text-muted">Beautiful websites, conversion-first landing pages, and memorable digital experiences for every client.</p>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-md-4">
+<div class="card overflow-hidden">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Creative Agency">
+<div class="card-body">
+<h5 class="fw-bold">Creative Agency Site</h5>
+<p>Bold visuals and clean layout for a modern agency presence.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card overflow-hidden h-100">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="E-commerce">
+<div class="card-body">
+<h5 class="fw-bold">E-commerce Store</h5>
+<p>Fast browsing, polished product pages, and seamless checkout flow.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card overflow-hidden">
+<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Portfolio">
+<div class="card-body">
+<h5 class="fw-bold">Portfolio Showcase</h5>
+<p>Elegant presentation for creative work, case studies, and testimonials.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-5" id="stats">
+<div class="container">
+<div class="text-center mb-5">
+<h2 class="fw-bold section-title">Numbers That Matter</h2>
+<p class="text-muted mx-auto" style="max-width: 700px;">Proven metrics from happy clients and successful launches.</p>
+</div>
+<div class="row g-4 justify-content-center">
+<div class="col-md-3">
+<div class="stats-card">
+<h3>120+</h3>
+<p>Websites Created</p>
+</div>
+</div>
+<div class="col-md-3">
+<div class="stats-card">
+<h3>98%</h3>
+<p>Customers Satisfied</p>
+</div>
+</div>
+<div class="col-md-3">
+<div class="stats-card">
+<h3>75</h3>
+<p>Returning Clients</p>
+</div>
+</div>
+<div class="col-md-3">
+<div class="stats-card">
+<h3>24/7</h3>
+<p>Support Available</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-5 bg-light" id="contact">
+<div class="container">
+<div class="text-center mb-4">
+<h2 class="fw-bold section-title">Contact Us</h2>
+<p class="text-muted mx-auto" style="max-width: 650px;">Ready to launch your next website? Send a message and get a custom proposal.</p>
+</div>
+<div class="row justify-content-center">
+<div class="col-md-7 col-lg-6">
+<form>
+<div class="mb-3">
+<input type="text" class="form-control" placeholder="Your Name">
+</div>
+<div class="mb-3">
+<input type="email" class="form-control" placeholder="Your Email">
+</div>
+<div class="mb-3">
+<textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+</div>
+<button type="button" class="btn btn-dark w-100">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Eric Empire. All Rights Reserved. | <a href="https://eric-empire-demo.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: #9d82ff; text-decoration: none;">View Live Demo</a></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+window.addEventListener("scroll", function(){
+    document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+
+</body>
+</html>>
